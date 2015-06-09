@@ -1,8 +1,8 @@
 FROM ubuntu:wily
 MAINTAINER Davey Shafik <davey@engineyard.com>
 
-RUN apt-get update
-RUN apt-get install -y memcached
+RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -q -y memcached
 
 CMD ["memcached", "-u", "daemon"]
 
